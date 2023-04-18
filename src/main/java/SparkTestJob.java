@@ -19,7 +19,7 @@ public class SparkTestJob {
                 .getOrCreate();
 
         spark.sql("CREATE DATABASE IF NOT EXISTS spark_tests");
-        spark.sql("CREATE EXTERNAL TABLE IF NOT EXISTS spark_tests.s3_table_1 (key INT, value STRING) STORED AS PARQUET LOCATION 's3a://spark/s3_table_1'");
+        spark.sql("CREATE EXTERNAL TABLE IF NOT EXISTS spark_tests.s3_table_1 (id INT, element STRING) STORED AS PARQUET LOCATION 's3a://spark/s3_table_1'");
 
         List<Tuple2<Integer, String>> list = new ArrayList<>();
         for (int i = 1; i <= 30; i++) {
